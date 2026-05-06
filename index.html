@@ -1,74 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Countdown bis lecker Bierchen🍻</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 20%;
-    background-color: #f4f6f8;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown bis lecker Bierchen 🍻</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20%;
+      background-color: #f4f6f8;
+    }
 
-h1 {
-    font-size: 2em;
-}
+    h1 {
+      font-size: 2em;
+    }
 
-#countdown {
-    font-size: 1.8em;
-    margin-top: 20px;
-    color: #0078D4;
-}
-</style>
+    #countdown {
+      font-size: 1.8em;
+      margin-top: 20px;
+      color: #0078D4;
+    }
+
+    .hero-image {
+      max-width: 90%;
+      height: auto;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
-
 <body>
+  <h1>Countdown bis Lecker Bierchen 🍻</h1>
 
-<h1>Countdown bis Lecker Bierchen🍻</h1>
-<div id="countdown">Lädt...</div>
+  <div id="countdown">Lädt...</div>
 
-<img src="image.png" alt="Bierkoenig Bild" class="hero-image">
+  <!-- Stelle sicher, dass image.png im selben Ordner liegt -->
+  image.png
 
-<div id="countdown">Lädt...</div>
-    
-.hero-image {
-    max-width: 90%;
-    height: auto;
-    margin-top: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+  <script>
+    function updateCountdown() {
+      const now = new Date();
+      const year = now.getFullYear();
 
-<script>
-function updateCountdown() {
-    const now = new Date();
-    const year = now.getFullYear();
-    let target = new Date(year, 6, 9, 0, 0, 0);
-    if (now > target) {
+      let target = new Date(year, 6, 9, 0, 0, 0);
+      if (now > target) {
         target = new Date(year + 1, 6, 9, 0, 0, 0);
-    }
+      }
 
-    const diff = target - now;
+      const diff = target - now;
 
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "🎉 Es isch Bierzeit!";
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "🎉 Es isch Bierziit!";
         return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerHTML =
+        days + " Tage " + hours + " Std " + minutes + " Min " + seconds + " Sek";
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("countdown").innerHTML =
-        days + " Tage " + hours + " Std " + minutes + " Min " + seconds + " Sek";
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
-
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
-
+</html>
