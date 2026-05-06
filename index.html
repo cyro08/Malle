@@ -12,8 +12,16 @@
   margin-top: 20%;
 
   background-image: url("index.png");
-  background-size: cover;        /* Bild füllt den ganzen Bildschirm */
-  background-position: center;   /* zentriert */
+
+  /* Zentrierung */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertikal */
+  align-items: center;     /* horizontal */
+  height: 100vh;           /* ganze Bildschirmhöhe */
+
+  margin: 0;
+
   background-repeat: no-repeat;  /* nicht wiederholen */
 }
 
