@@ -33,6 +33,9 @@
 }
 
 #countdown {
+  display: block;
+  text-align: center;
+  white-space: pre-line;
   font-size: 1.9em;
   margin-top: 20px;
   color: red;
@@ -74,9 +77,9 @@ h1 {
       const seconds = Math.floor((diff / 1000) % 60);
 
       document.getElementById("countdown").innerHTML =
-        days + " Tage " + 
-        hours + " Std " + 
-        minutes + " Min " + 
+        days + " Tage\n" + 
+        hours + " Std\n" + 
+        minutes + " Min\n" + 
         seconds + " Sek";
     }
 
